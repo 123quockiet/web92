@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Những Kỉ Niệm Lớp 9/2 💫</title>
+
+  <!-- Google Fonts: Playfair Display (display) + Nunito (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== PARTICLE CANVAS ===================== -->
+  <!-- Canvas phủ toàn màn hình, chứa hiệu ứng hạt bụi sáng -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ===================== MUSIC TOGGLE ===================== -->
+  <!-- Nút bật/tắt nhạc nền, góc dưới phải -->
+  <button class="music-btn" id="musicBtn" title="Bật / Tắt nhạc nền">
+    <span class="music-icon" id="musicIcon">🎵</span>
+    <span class="music-label">Nhạc nền</span>
+  </button>
+
+  <!-- Audio element – thay src bằng file nhạc của bạn -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">9/2 ✨</div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link active">Trang chủ</a></li>
+      <li><a href="#members" class="nav-link">Thành viên</a></li>
+      <li><a href="#guestbook" class="nav-link">Sổ lưu bút</a></li>
+    </ul>
+    <!-- Hamburger cho mobile -->
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#hero" class="mob-link">🏠 Trang chủ</a></li>
+      <li><a href="#members" class="mob-link">👥 Thành viên</a></li>
+      <li><a href="#guestbook" class="mob-link">📖 Sổ lưu bút</a></li>
+    </ul>
+  </div>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section class="hero" id="hero">
+    <!-- Ảnh nền lớp với overlay tối -->
+    <div
+      class="hero-bg"
+      style="background-image: url('lop92.png')"
+    ></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <!-- Badge nhỏ phía trên tiêu đề -->
+      <div class="hero-badge reveal-up">🌟 Năm học 2024 – 2025</div>
+
+      <!-- Tiêu đề chính -->
+      <h1 class="hero-title reveal-up">
+        Những Kỉ Niệm<br />
+        <span class="gradient-text">Lớp 9/2</span>
+      </h1>
+
+      <!-- Mô tả ngắn -->
+      <p class="hero-subtitle reveal-up">
+        Một năm học đong đầy kỷ niệm, tình bạn và những nụ cười.<br />
+        Dù mai đây mỗi người mỗi ngả, 9/2 mãi trong tim ❤️
+      </p>
+
+      <!-- Nút CTA -->
+      <div class="hero-ctas reveal-up">
+        <a href="#members" class="btn btn-primary">Gặp gỡ thành viên ✨</a>
+        <a href="#guestbook" class="btn btn-ghost">Viết lưu bút 📖</a>
+      </div>
+
+      <!-- Số liệu thống kê nhỏ -->
+      <div class="hero-stats reveal-up">
+        <div class="stat">
+          <span class="stat-num" data-target="38">0</span>
+          <span class="stat-label">Thành viên</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="1">0</span>
+          <span class="stat-label">Giáo viên chủ nhiệm</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="365">0</span>
+          <span class="stat-label">Ngày bên nhau</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mũi tên cuộn xuống -->
+    <a href="#members" class="scroll-arrow" aria-label="Cuộn xuống">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </a>
+  </section>
+
+  <!-- ===================== MEMBERS SECTION ===================== -->
+  <section class="members-section" id="members">
+    <div class="section-header reveal-up">
+      <p class="section-eyebrow">Gia đình nhỏ của chúng ta</p>
+      <h2 class="section-title">Thành viên lớp 9/2</h2>
+      <p class="section-desc">
+        Nhấn vào avatar để nhận lời chúc đặc biệt dành riêng cho bạn 💌
+      </p>
+    </div>
+
+    <!-- GVCN – avatar lớn trung tâm -->
+    <div class="teacher-spotlight reveal-up">
+      <div class="teacher-ring">
+        <img
+          src="thaydong.png"
+          alt="Thầy Huỳnh Văn Đông"
+          class="teacher-img"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <!-- Fallback avatar nếu không có ảnh -->
+        <div class="teacher-fallback" style="display:none;">HVĐ</div>
+      </div>
+      <div class="teacher-info">
+        <h3 class="teacher-name">Huỳnh Văn Đông</h3>
+        <p class="teacher-role">🎓 Giáo viên chủ nhiệm</p>
+      </div>
+    </div>
+
+    <!-- LƯỚI THÀNH VIÊN -->
+    <div class="members-grid" id="membersGrid">
+      <!-- Các avatar được tạo bằng JavaScript -->
+    </div>
+  </section>
+
+  <!-- ===================== GUESTBOOK SECTION ===================== -->
+  <section class="guestbook-section" id="guestbook">
+    <div class="section-header reveal-up">
+      <p class="section-eyebrow">Ký ức muôn đời</p>
+      <h2 class="section-title">📖 Sổ Lưu Bút</h2>
+      <p class="section-desc">Để lại một dòng kỷ niệm cho lớp 9/2 nhé!</p>
+    </div>
+
+    <!-- Form viết lưu bút -->
+    <div class="guestbook-form reveal-up">
+      <div class="form-group">
+        <label for="gbName">Tên của bạn</label>
+        <input
+          type="text"
+          id="gbName"
+          placeholder="Nhập tên bạn…"
+          maxlength="40"
+        />
+      </div>
+      <div class="form-group">
+        <label for="gbMessage">Lời nhắn</label>
+        <textarea
+          id="gbMessage"
+          placeholder="Ghi lại kỷ niệm, lời chúc, hay bất kỳ điều gì bạn muốn nói với lớp…"
+          rows="4"
+          maxlength="300"
+        ></textarea>
+        <span class="char-counter"><span id="charCount">0</span>/300</span>
+      </div>
+      <button class="btn btn-primary" id="gbSubmit">
+        Gửi lời nhắn 💌
+      </button>
+    </div>
+
+    <!-- Danh sách các lời nhắn -->
+    <div class="guestbook-entries" id="gbEntries">
+      <!-- Được render bằng JavaScript -->
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-title">Lớp 9/2 💫</p>
+      <p class="footer-sub">
+        Trường THCS … • Năm học 2024–2025<br />
+        Made with ❤️ by lớp 9/2
+      </p>
+      <p class="footer-copy">© 2025 Lớp 9/2. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== MODAL LỜI CHÚC ===================== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card" id="modalCard">
+      <!-- Nút đóng -->
+      <button class="modal-close" id="modalClose" aria-label="Đóng">✕</button>
+
+      <!-- Avatar lớn trong modal -->
+      <div class="modal-avatar" id="modalAvatar"></div>
+
+      <!-- Tên thành viên -->
+      <h3 class="modal-name" id="modalName"></h3>
+
+      <!-- Lời chúc -->
+      <div class="modal-wish-box">
+        <p class="modal-wish" id="modalWish"></p>
+      </div>
+
+      <!-- Chữ ký -->
+      <p class="modal-sig" id="modalSig"></p>
+
+      <!-- Nút lấy lời chúc khác -->
+      <button class="btn btn-primary btn-sm" id="rerollBtn">
+        Lời chúc khác 🎲
+      </button>
+    </div>
+  </div>
+
+  <!-- ===================== TOAST NOTIFICATION ===================== -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
